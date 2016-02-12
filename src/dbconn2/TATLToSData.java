@@ -41,6 +41,7 @@ public class TATLToSData {
 	public static ErrorLog errorLog = null;
 	public static String errorMsg = "";
 	
+	/*This method is*/
 	public void getTATLToSData(String docName, String viewName) throws Exception{
 		//ViewResult result = bucket.query(ViewQuery.from(docName, viewName).stale(Stale.FALSE));	
 		ViewResult result = dbOp.executeQuery(bucket, docName, viewName);
