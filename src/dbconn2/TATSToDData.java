@@ -44,6 +44,9 @@ public class TATSToDData {
 	public static ErrorLog errorLog = null;
 	public static String errorMsg = "";
 		
+	/*This method is used to get TAT S To D Data and calculate the TAT S To D Score and update the 
+	 * customer document.
+	 * */
 	public void getTATSToDData(String docName, String viewName) throws Exception{		
 		//ViewResult result = bucket.query(ViewQuery.from(docName, viewName).stale(Stale.FALSE));
 		ViewResult result = dbOp.executeQuery(bucket, docName, viewName);
@@ -122,6 +125,7 @@ public class TATSToDData {
 		
 	}
 	
+	/*This method updates the Customer document with the TAT S To D score*/
 	public void updateCustomerDoc(String proposalId, int value, String modifiedTS) throws Exception{		
 		//ViewResult result = bucket.query(ViewQuery.from(docName, updateViewName).key(proposalId).stale(Stale.FALSE));
 		ViewResult result = dbOp.executeQuery(bucket, docName, updateViewName, proposalId);
