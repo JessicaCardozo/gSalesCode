@@ -41,6 +41,7 @@ public class BeatPlanUserScoreByDay {
 	public static ErrorLog errorLog = null;
 	public static String errorMsg = "";
 	
+	/* This method updates the beat plan points to the USBD document. */
 	public void updateUserScoreByDayBeatPlanPoints(String sceId, int points, String updateView) throws Exception{
 		List startKeyList = new ArrayList();
 		List endKeyList = new ArrayList();
@@ -130,6 +131,7 @@ public class BeatPlanUserScoreByDay {
 		logger.debug("USER ID "+userId);
 	}
 	
+	/* This method updates the beat plan points to the User document. */
 	public void updateUserDoc(ViewRow row, HashMap map){
 		String sceId = "";
 		try{						
@@ -207,6 +209,9 @@ public class BeatPlanUserScoreByDay {
 		}
 	}
 	
+	/* This method gets the beat plan data, calculates the beat plan points and updates 
+	 * the score to the user and the USBD documents. 
+	 *  */
 	public ViewResult getBeatPlanData(String docName, String viewName) throws Exception{
 		
 		ViewResult result = dbOp.executeQuery(userBucket, docName, updateUserViewName);
